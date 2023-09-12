@@ -89,3 +89,20 @@ body{
 .lightModeScreen{
     background-color: gray;
 }
+
+
+.floatingCursor{
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 0;
+    background-color: rgb(165, 133, 73);
+    position: fixed;
+    z-index: 1000;
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+body:hover> .floatingCursor{
+    opacity: 1;
+}

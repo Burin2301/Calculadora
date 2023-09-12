@@ -109,8 +109,8 @@ function backSpace(){
 
 
 const modeBtn = document.querySelector('#mode')
-
 const container = document.querySelector('.container')
+const cursor = document.getElementById('cursor')
 
 let lightMode = false
 
@@ -131,6 +131,11 @@ function changeMode(){
     }
 }
 
+window.onmousemove = e =>{
+    const x = e.clientX - cursor.offsetWidth / 2,
+    y = e.clientY - cursor.offsetHeight / 2
+    cursor.style.transform = `translate(${x}px, ${y}px)`
+}
 
 
 
