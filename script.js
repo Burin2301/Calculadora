@@ -7,6 +7,7 @@ const clearBtn = document.querySelector('.clear')
 const backBtn = document.querySelector('.back')
 
 
+
 let result = ''
 let value
 let operator = null
@@ -29,22 +30,17 @@ function addDivide(a, b){
     result = a / b
     operator = null
 }
-
 function updateScreen(){
     screen.innerText = result
 }
-
 function addValue(number){
     result += number
     updateScreen()
 }
-
 numberBtns.forEach((number =>{
     number.addEventListener('click', ()=> addValue(number.innerText) )
     }
 ))
-
-
 function addOperator(ope){
     if(operator === null){
         operator = ope
@@ -53,18 +49,15 @@ function addOperator(ope){
 
     }
 }
-
 operatorBtns.forEach((operator =>{
     operator.addEventListener('click', () => addOperator(operator.innerText))
 }))
-
 function clearScreen(){
     result = ''
     operator = null
     updateScreen()
 }
 clearBtn.addEventListener('click', clearScreen)
-
 function calculate(){
     if(operator !== null){
         components = result.split(' ')
@@ -95,25 +88,48 @@ function calculate(){
     // 
 }
 equalBtn.addEventListener('click', calculate)
-
-
 percentBtn.addEventListener('click', percentOperation)
-
 function percentOperation(){
     result = result/100
     updateScreen()
 
 }
-
-
 backBtn.addEventListener('click', backSpace)
-
 function backSpace(){
     result = result.slice(0, -1)
     updateScreen()
 }
 
 
+
+
+
+// STYLE STUFF
+
+
+
+const modeBtn = document.querySelector('#mode')
+
+const container = document.querySelector('.container')
+
+let lightMode = false
+
+
+
+modeBtn.addEventListener('click', changeMode)
+
+function changeMode(){
+    isLightMode = !lightMode
+    lightMode = true
+    if(isLightMode){
+        container.classList.add('lightMode')
+        screen.classList.add('lightModeScreen')
+    }else{
+        container.classList.remove('lightMode')
+        screen.classList.remove('lightModeScreen')
+        lightMode = false
+    }
+}
 
 
 
