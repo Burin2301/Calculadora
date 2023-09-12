@@ -26,8 +26,9 @@ body{
     color: white;
     margin-top: 30px;
     text-align: end;
-    padding: 20px 10px;
-    font-size: 2.6em;    
+    padding: 20px 15px;
+    font-size: 2.6em;  
+    overflow: hidden;  
 }
 .keys{
     display: grid;
